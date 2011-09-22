@@ -1,0 +1,4 @@
+{footer_data}
+<div class="footer">
+    <div class="footertext">{$title}</div>
+</div>

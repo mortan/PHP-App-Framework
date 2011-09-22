@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Anmeldung zur Besucher- und Telefonstatistik</title>
+
+    <link rel="stylesheet" type="text/css" href="css/layout.css">
+    <script type="text/javascript" src="script/jquery-1.5.min.js"></script>
+    <script type="text/javascript" src="script/login.js"></script>
+</head>
+<body class="login" onLoad="getId('username').focus();">
+
+<div class="head"><h1>Besucher- und Telefonstatistik</h1>
+    <h2>Anmeldung / {$standort}</h2>
+</div>
+
+<div align="center">
+    <br/><br/>
+    <table class='lessBorders'>
+        <tr>
+            <td>
+                Benutzer:
+            </td>
+            <td>
+                <input name="benutzer" type="text" style="width:150px"  id="username">
+            </td>
+
+        </tr>
+        <tr>
+            <td id='passwortTD'>
+                Passwort:
+            </td>
+            <td>
+            {literal}
+                <input name="passwort" type="password" style="width:150px" id="oldPass"
+                       onkeyup="return submitenter(event);">
+            {/literal}
+            </td>
+        </tr>
+        <tr style='display: none;' id='neuesPasswort'>
+            <td>
+                Neues Passwort:
+            </td>
+            <td>
+                <input name='neuesPasswort' type='password' size='20' id='newPass1'>
+            </td>
+        </tr>
+        <tr style='display: none;' id='neuesPasswort2'>
+            <td>
+                Wiederholen:
+            </td>
+            <td>
+                <input name='neuesPasswort2' type='password' size='20' id='newPass2'>
+            </td>
+        </tr>
+        <tr>
+            <td colspan='2' style='text-align: center;'>
+                <br>
+                <button id='loginButton' onClick='doLogin();'>Anmelden</button>
+                <button onClick='passwortAendern();'>Passwort ändern</button>
+            </td>
+        </tr>
+    </table>
+
+    <br><br>
+    <div class="license">
+        <div class="licensetext">{$license}</div>
+    </div>
+</div>
+
+{include file='footer.tpl'}
+
+<div class='fullscreen' id='noJavascript'><h1>Ein Fehler ist aufgetreten</h1>Sie haben Javascript in Ihrem Browser
+    deaktiviert. Bitte aktivieren Sie Javascript.
+</div>
+
+<script type="text/javascript">
+    getId('noJavascript').style.display = 'none';
+</script>
+
+</body>
+</html>

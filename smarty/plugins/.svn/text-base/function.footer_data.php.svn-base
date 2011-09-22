@@ -1,0 +1,22 @@
+<?php
+/*
+ * Smarty plugin
+ * -------------------------------------------------------------
+ * File:     function.footer_data.php
+ * Type:     function
+ * Name:     footer_data
+ * Purpose:  Generiert den Footer-Text aus dem Datenbankeintrag und der Programmversion
+ * -------------------------------------------------------------
+ */
+
+require_once(dirname(__FILE__) . '/../../runtime.php');
+require_once(dirname(__FILE__) . '/../../propel.php');
+require_once(dirname(__FILE__) . '/../../version.php');
+
+function smarty_function_footer_data($params, $template)
+{
+    $title = getConfigValue('Footer');
+    $title .= 'Version ' . VERSION;
+    $template->assign('title', $title);
+}
+?>
